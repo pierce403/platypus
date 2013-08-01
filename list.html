@@ -1,0 +1,66 @@
+<html>
+<body>
+
+<script language='JavaScript' src="jquery.js"></script>
+
+<table id="main">
+<tr><td valign="top">
+<img src="platypus.png" width=200>
+<br><br>
+<div id="stat1"></div>
+
+</td>
+
+<td>
+  <table id="creds" border=0 cellpading=5>
+    <tr><td>user</td><td>pass</td><td>domain</td><td>target</td><td>time</td></tr>
+  </table>
+</td></tr>
+</table>
+
+<script>
+
+var numCreds=0;
+var lastTime=0;
+
+window.onerror = function(msg, url, linenumber) {
+    console.log('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
+    return true;
+}
+
+function addCred(user,pass,domain,ip,agent,ctime)
+{
+  table = $('#creds tr:first');
+  tr = $('<tr>');
+  tr.append($('<td>').text(user));
+  tr.append($('<td>').text(pass));
+  tr.append($('<td>').text(domain));
+  tr.append($('<td>').text(ip));
+  tr.append($('<td>').text(new Date(ctime*1000).toLocaleTimeString()));
+  table.after(tr);
+
+  numCreds++;
+  $('#stat1').text("number of creds : "+numCreds);
+}
+
+function addItems()
+{
+  $.getJSON('creds',''+lastTime,function(data)
+  {
+    $.each(data,function(index,e)
+    {
+      //alert('index : '+index+"  element: "+e);
+      addCred(e[0],e[1],e[2],e[3],e[4],e[5]);
+      lastTime=e[5];
+    });
+  });
+
+  setTimeout(addItems,2000);
+}
+
+setTimeout(addItems,2000);
+
+</script>
+
+</body>
+</html>
